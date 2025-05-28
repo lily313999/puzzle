@@ -5,19 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>移動拼圖遊戲</title>
   <link rel="stylesheet" href="style.css" />
+
     <!-- Open Graph 基本標籤 -->
     <meta property="og:title" content="移動拼圖遊戲">
     <meta property="og:image" content="banner.png"> <!-- 分享時顯示的圖片 -->
+
 </head>
 <body>
   <div id="game-container">
     <div id="puzzle"></div>
-    <div id="level-buttons">
-      <button onclick="setLevel(0)">1.</button>
-      <button onclick="setLevel(1)">2.</button>
-      <button onclick="setLevel(2)">3.</button>
-      <button onclick="setLevel(3)">4.</button>
+
+<div id="controls">
+  <img
+    id="info-button"
+    src="info-icon.png"
+    alt="說明"
+    style="width: 100px; height: 40px; cursor: pointer;"
+    onclick="toggleInstructions()"
+  />
+
+  <div id="level-buttons">
+    <button onclick="setLevel(0)">1.</button>
+    <button onclick="setLevel(1)">2.</button>
+    <button onclick="setLevel(2)">3.</button>
+    <button onclick="setLevel(3)">4.</button>
+    <button id="level5" onclick="setLevel(4)" style="display: none;">5.</button>
+  </div>
+</div>
+
+    <div id="instruction-overlay" onclick="toggleInstructions()">
+      <img src="instructions.jpg" alt="遊戲說明" />
     </div>
+
   </div>
   <script src="script.js"></script>
 </body>
